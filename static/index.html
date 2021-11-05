@@ -84,7 +84,9 @@ function prepEntity(entity) {
         entity["colour"] = "#40E0D0";
     }
     if (!entity["radius"]) {
-        entity["radius"] = 100;
+        // make dancing circles with random radius
+        var randRadius = Math.floor(Math.random() * (80 - 76) + 76);
+        entity["radius"] = randRadius;
     }
     return entity;
 }
