@@ -67,7 +67,9 @@ world = {};
 function drawCircle(context,entity) {
     with(context) {
         beginPath();
-        lineWidth = 1.5;
+        // make dancing circles with random line weight
+        var randWidth = Math.floor(Math.random() * (6 - 1) + 1);
+        lineWidth = randWidth;
         var x = entity["x"];
         var y = entity["y"];
         fillStyle = entity["colour"];
@@ -82,7 +84,7 @@ function prepEntity(entity) {
         entity["colour"] = "#40E0D0";
     }
     if (!entity["radius"]) {
-        entity["radius"] = 200;
+        entity["radius"] = 100;
     }
     return entity;
 }
